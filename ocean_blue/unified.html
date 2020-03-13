@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <!-- saved from url=(0080)../assets/AzureBlue/selfAsserted.cshtml -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <title>Sign in</title>
 
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
 
     <link href="./css/assets.css" rel="stylesheet" type="text/css" />
     <link href="./css/common.css" rel="stylesheet" type="text/css" />
     <link href="./css/unified.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
+    <script>
+        $(function () {
+            console.log("ready!");
+
+            //Change Forget Password Text
+            $('#forgotPassword').html('Reset My Password');
+
+
+            //Handle Forget password click  (fixing ADB2C error)
+            $("#forgotPassword").click(function (e) {
+                e.preventDefault();
+
+
+                var oldUrl = window.location.href;
+                var newUrl = oldUrl.replace('B2C_1_signupsignin1', 'B2C_1_passwordreset1');
+
+                window.location.href = newUrl;
+
+            });
+
+        });
+    </script>
     <div class="container  unified_container ">
         <div class="row">
             <div class="col-lg-6">
@@ -29,4 +56,6 @@
     </div>
 
 
-</body></html>
+</body>
+
+</html>
