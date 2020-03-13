@@ -24,7 +24,7 @@
             console.log("ready!");
 
             //Change Forget Password Text
-            $('#forgotPassword').html('Reset My Password');
+            $('#forgotPassword').html('忘記密碼?');
 
 
             //Handle Forget password click  (fixing ADB2C error)
@@ -34,7 +34,6 @@
 
                 var oldUrl = window.location.href;
                 var newUrl = oldUrl.replace('B2C_1_S', 'B2C_1_P');
-                console.log(oldUrl)
                 window.location.href = newUrl;
 
             });
