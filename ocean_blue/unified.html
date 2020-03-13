@@ -29,8 +29,7 @@
             //Handle Forget password click  (fixing ADB2C error)
             $("#forgotPassword").click(function (e) {
                 e.preventDefault();
-
-
+                console.log("check")
                 var oldUrl = window.location.href;
                 var newUrl = oldUrl.replace('B2C_1_S', 'B2C_1_P');
                 newUrl = newUrl.replace('b2c_1_s','b2c_1_p')
